@@ -73,7 +73,7 @@
 }
 
 .nav-header {
-  @apply bg-white/90 dark:bg-gray-900/90 backdrop-blur-md  w-full z-50 shadow-lg;
+  @apply bg-white/90 dark:bg-gray-900/90 backdrop-blur-md fixed w-full z-50 shadow-lg;
 }
 
 .content-section {
