@@ -1,152 +1,39 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>My Jammu & Kashmir - Safe Tourism</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <!-- Font Awesome for Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-</head>
-<body>
-<nav class="navbar">
-  <h1>My Jammu & Kashmir</h1>
-  <div class="nav-links">
-    <span class="visitor-text">Welcome, Visitor</span>
-    <button id="theme-toggle">Toggle Theme</button>
-  </div>
-</nav>
-
-  <div class="alert-banner">
-    Important Safety Alert: Stay vigilant and follow local authority guidelines.
-  </div>
-  <!-- Safe Tourist Areas Section -->
-<section class="safe-areas">
-  <h2>Safe Tourist Areas</h2>
-  <div class="safe-cards">
-    <div class="safe-card">
-      <h3>Dal Lake Area</h3>
-      <p>Well-monitored tourist zone with regular police patrols.</p>
-      <span class="safety-level green">Safety Level: High</span>
-    </div>
-    <div class="safe-card">
-      <h3>Lal Chowk</h3>
-      <p>Central business district with 24/7 security.</p>
-      <span class="safety-level green">Safety Level: High</span>
-    </div>
-  </div>
-</section>
-<section class="select-region">
-  <h2>Select Region</h2>
-  <div class="cards">
-    <div class="card" id="srinagar">Srinagar<br><small>Capital city with Dal Lake</small></div>
-    <div class="card" id="gulmarg">Gulmarg<br><small>Famous for skiing and gondola</small></div>
-    <div class="card" id="pahalgam">Pahalgam<br><small>Valley of Shepherds</small></div>
-    <div class="card" id="sonmarg">Sonamarg<br><small>Meadow of Gold</small></div>
-    <div class="card" id="kupwara">Kupwara<br><small>Scenic beauty at border</small></div>
-    <div class="card" id="baramulla">Baramulla<br><small>Historic town on Jhelum River</small></div>
-  </div>
-</section>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/mountain-logo.svg" />
+    <meta name="generator" content="Hostinger Horizons" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Jammu & Kashmir - Tourism Portal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  
+<div id="popup" style="position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);
+display:flex;align-items:center;justify-content:center;z-index:1000;">
 
 
-<!-- Emergency Contacts Section -->
-<section class="emergency-contacts">
-  <h2>Emergency Contacts</h2>
-  <div class="contact-cards">
-    <div class="contact-card">
-      <i class="fas fa-shield-halved"></i>
-      <h4>Srinagar Police Control Room</h4>
-      <p><a href="tel:01942477568">0194-2477568</a></p>
-    </div>
-    <div class="contact-card">
-      <i class="fas fa-hospital"></i>
-      <h4>SMHS Hospital</h4>
-      <p><a href="tel:01942452052">0194-2452052</a></p>
-    </div>
-    <div class="contact-card">
-      <i class="fas fa-phone"></i>
-      <h4>Tourist Emergency Helpline</h4>
-      <p><a href="tel:1363">1363</a></p>
-    </div>
-    <div class="contact-card">
-      <i class="fas fa-fire-extinguisher"></i>
-      <h4>Fire Emergency</h4>
-      <p><a href="tel:101">101</a></p>
-    </div>
-    <div class="contact-card">
-      <i class="fas fa-ambulance"></i>
-      <h4>Ambulance Service</h4>
-      <p><a href="tel:102">102</a></p>
-    </div>
-    <div class="contact-card">
-      <i class="fas fa-female"></i>
-      <h4>Women Helpline</h4>
-      <p><a href="tel:1091">1091</a></p>
-    </div>
-    <div class="contact-card">
-      <i class="fas fa-city"></i>
-      <h4>District Control Room</h4>
-      <p><a href="tel:01942452138">0194-2452138</a></p>
-    </div>
-    <div class="contact-card">
-      <i class="fas fa-user-shield"></i>
-      <h4>Anti-Terror Helpline</h4>
-      <p><a href="tel:1090">1090</a></p>
-    </div>
-  </div>
-</section>
-<section class="safety-tips">
-  <h2>Safety Tips</h2>
-  <div class="tips-grid">
-    <div class="tip">Always carry identification documents</div>
-    <div class="tip">Keep emergency contact numbers saved</div>
-    <div class="tip">Stay updated with local weather conditions</div>
-    <div class="tip">Register with local police station upon arrival</div>
-    <div class="tip">Travel in groups when possible</div>
-    <div class="tip">Share your itinerary with family/friends</div>
-    <div class="tip">Keep local emergency numbers handy</div>
-    <div class="tip">Avoid traveling after dark</div>
-    <div class="tip">Stay connected with local authorities</div>
-    <div class="tip">Download offline maps for emergency</div>
-  </div>
-</section>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const popup = document.getElementById('popup');
+    const form = document.getElementById('form');
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const phone = document.getElementById('phone').value;
+        const email = document.getElementById('email').value;
+        const code = document.getElementById('code').value;
 
+        const userData = { phone: phone, email: email, code: code };
+        localStorage.setItem('userData', JSON.stringify(userData));
 
+        popup.style.display = 'none';
+        alert('Thank you! Your data is saved.');
+    });
+});
+</script>
 
-
-  <section class="info-section">
-    <h2>Current Safety Status</h2>
-    <p>Area is under increased security measures. Tourist activities are monitored and protected by local authorities.</p>
-  </section>
-
-  <section class="info-section">
-    <h2>Weather & Alerts</h2>
-    <button class="btn-primary">Enable Alerts</button>
-  </section>
-  <!-- Feedback Form Section -->
-<section class="feedback-section">
-  <h2>Share Your Story</h2>
-  <form id="feedback-form">
-    <label for="name">Your Name:</label>
-    <input type="text" id="name" placeholder="Enter your name" required>
-    
-    <label for="story">Your Story:</label>
-    <textarea id="story" placeholder="Share your experience..." rows="5" required></textarea>
-    
-    <button type="submit">Submit</button>
-  </form>
-
-  <div id="feedback-messages">
-    <h3>Visitor Stories</h3>
-    <!-- Feedback messages will appear here -->
-  </div>
-</section>
-
-  <footer>
-    &copy; 2025 My Jammu & Kashmir. All rights reserved.
-  </footer>
-
-  <script src="script.js"></script>
 </body>
-</html
+</html>
